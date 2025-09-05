@@ -1,215 +1,246 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+<html><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HiboxAI.com - Premium Domain for Sale</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>HiboxAI.com - Premium AI Domain for Sale</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
-    :root {
-      --primary-color: #3b82f6;
-      --secondary-color: #93c5fd;
-      --background-color: #0f172a;
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --accent-color: #3b82f6;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-primary);
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
-    }
-    .form-input {
-        @apply w-full bg-slate-700/50 border border-slate-600 rounded-md py-2 px-3 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out;
-    }
-    .background-animation {
-        position: fixed;
+      :root {
+        --primary-color: #1e90ff;
+        --secondary-color: #0a0f29;
+        --text-dark: #1a202c;
+        --text-light: #f7fafc;
+      }
+      .btn-primary {
+        @apply bg-[var(--primary-color)] text-white hover:bg-blue-600 shadow-lg;
+      }
+      .btn-secondary {
+        @apply bg-white/20 text-white hover:bg-white/30 shadow-lg;
+      }
+      body {
+        background-color: var(--secondary-color);
+        background-image: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+        position: relative;
+        overflow-x: hidden;
+      }
+      #particles-js {
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
-    }
-    .background-animation::before {
-        content: '';
+        z-index: 0;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 0.1);
+      }
+      .network-mesh {
         position: absolute;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
-        border-radius: 50%;
-        animation: move-glow1 15s infinite alternate;
-        top: 10%;
-        left: -5%;
-    }
-    .background-animation::after {
-        content: '';
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%);
-        border-radius: 50%;
-        animation: move-glow2 20s infinite alternate;
-        bottom: 5%;
-        right: -10%;
-    }
-    @keyframes move-glow1 {
-        0% {
-            transform: translate(0, 0) scale(1);
-        }
-        100% {
-            transform: translate(30vw, 40vh) scale(1.2);
-        }
-    }
-    @keyframes move-glow2 {
-        0% {
-            transform: translate(0, 0) scale(1);
-        }
-        100% {
-            transform: translate(-40vw, -30vh) scale(0.8);
-        }
-    }.chatbot-container {
-        position: fixed;
-        bottom: 2rem;
-        right: 1.5rem;
-        z-index: 100;
-    }
-    .chatbot-icon {
-        width: 4rem;
-        height: 4rem;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
-        animation: pulse 2s infinite;
-        transition: transform 0.3s ease;
-    }
-    .chatbot-icon:hover {
-        transform: scale(1.1);
-    }
-    .chatbot-message {
-        position: absolute;
-        bottom: 5rem;
-        right: 0;
-        width: 280px;
-        background-color: #1e293b;
-        border: 1px solid #334155;
-        padding: 1rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        color: var(--text-secondary);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    }
-    .chatbot-container:hover .chatbot-message {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    .chatbot-message::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        right: 22px;
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid #1e293b;
-    }
-    @keyframes pulse {
-        0% {
-            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
-        }
-        70% {
-            box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-        }
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary)]">
-<div class="background-animation"></div>
-<main class="flex flex-col min-h-screen relative z-10">
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        opacity: 0.3;
+        pointer-events: none;
+      }
+    </style>
+</head>
+<body class="text-white" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e'); font-family: &quot;Space Grotesk&quot;, &quot;Noto Sans&quot;, sans-serif;">
+<div id="particles-js"></div>
+<div class="network-mesh"></div>
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden content-wrapper">
 <div class="flex-grow">
-<section class="text-center py-20 px-4 sm:py-24">
-<div class="max-w-3xl mx-auto">
-<div class="flex justify-center items-center mb-8">
-<div class="relative w-28 h-28 sm:w-32 sm:h-32">
-<div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl transform -rotate-12 shadow-2xl"></div>
-<div class="absolute inset-0 bg-slate-800 rounded-3xl flex items-center justify-center shadow-lg backdrop-blur-sm">
-<span class="material-symbols-outlined text-6xl sm:text-7xl text-white" style="font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48">
-                  neurology
-                </span>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
+<div class="glass-card rounded-2xl shadow-2xl overflow-hidden">
+<section class="text-center py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+<div class="flex justify-center items-center gap-4 mb-6">
+<div class="p-3 bg-white/10 rounded-lg">
+<svg class="w-10 h-10 text-[var(--primary-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="m3.27 6.96 8.73 5.05 8.73-5.05" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M12 22.08V12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
 </div>
+<h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+<span class="font-light">Hibox</span><span class="text-[var(--primary-color)] font-bold">AI</span><span class="text-lg md:text-2xl text-gray-400 font-normal tracking-wider">.com</span>
+</h1>
 </div>
-</div>
-<h1 class="text-5xl font-black text-[var(--text-primary)] sm:text-7xl tracking-tight">HiboxAI.com</h1>
-<p class="mt-4 text-lg text-[var(--text-secondary)] sm:text-xl">A premium domain for the future of AI communication and collaboration.</p>
+<p class="mt-4 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+            Your Next AI Brand Starts Here.
+          </p>
+<p class="mt-2 text-lg text-gray-300">Secure this premium AI-focused domain today.</p>
+<div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+<a class="btn-primary rounded-lg px-8 py-4 text-lg font-bold transition-all duration-300 hover:shadow-blue-500/50 w-full sm:w-auto" href="mailto:yassinebouaida@gmail.com?subject=Purchase%20Inquiry%20for%20HiboxAI.com%20-%20%241295&amp;body=I%20am%20interested%20in%20purchasing%20the%20domain%20HiboxAI.com%20for%20the%20listed%20price%20of%20%241295.%20Please%20provide%20the%20next%20steps%20to%20complete%20the%20transaction.">
+              Buy Now – $1295
+            </a>
+<a class="btn-secondary rounded-lg px-8 py-4 text-lg font-bold transition-all duration-300 w-full sm:w-auto" href="mailto:yassinebouaida@gmail.com?subject=Offer%20for%20HiboxAI.com&amp;body=I%20would%20like%20to%20make%20an%20offer%20for%20the%20domain%20HiboxAI.com.%0A%0AMy%20offer%20is%3A%20%24">
+              Make an Offer
+            </a>
 </div>
 </section>
-<section class="py-12 px-4 sm:py-16">
-<div class="max-w-md mx-auto">
-<div class="p-8 bg-slate-800/50 rounded-xl shadow-lg border border-slate-700 backdrop-blur-sm">
-<h2 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight text-center mb-6">Make an Offer</h2>
-<form action="https://formspree.io/f/xblapqrw" class="space-y-4" method="POST">
+<div class="bg-black/20">
+<section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-3xl font-extrabold text-center text-white mb-12">
+                Key Benefits
+              </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<div class="p-8 bg-white/10 rounded-xl shadow-lg border border-white/20 transform hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-5xl text-[var(--primary-color)] mx-auto"> memory </span>
+<h3 class="mt-4 text-xl font-bold">Memorable &amp; Brandable</h3>
+</div>
+<div class="p-8 bg-white/10 rounded-xl shadow-lg border border-white/20 transform hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-5xl text-[var(--primary-color)] mx-auto"> verified_user </span>
+<h3 class="mt-4 text-xl font-bold">Trusted .com Extension</h3>
+</div>
+<div class="p-8 bg-white/10 rounded-xl shadow-lg border border-white/20 transform hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-5xl text-[var(--primary-color)] mx-auto"> smart_toy </span>
+<h3 class="mt-4 text-xl font-bold">AI Keyword Included</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl shadow-2xl p-12 text-center">
+<h2 class="text-3xl font-extrabold">Free Bonus Package!</h2>
+<p class="mt-4 text-lg">Purchase <strong class="font-bold">HiboxAI.com</strong> and receive <strong class="font-bold">HiboxAI.info</strong> and <strong class="font-bold">HiboxAI.link</strong> absolutely free!</p>
+</div>
+</section>
+<section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-extrabold text-center text-white mb-12">
+                Why Buy Now?
+              </h2>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-2xl text-green-400 mr-3 mt-1"> check_circle </span>
+<span class="text-lg text-gray-200">ICANN ownership transfer ensures full control and legitimacy.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-2xl text-green-400 mr-3 mt-1"> check_circle </span>
+<span class="text-lg text-gray-200">Perfect for startups and investors looking to establish a strong AI brand presence.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-2xl text-green-400 mr-3 mt-1"> check_circle </span>
+<span class="text-lg text-gray-200">Protect your brand identity across multiple top-level domains (TLDs).</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-2xl text-green-400 mr-3 mt-1"> check_circle </span>
+<span class="text-lg text-gray-200">This is a limited-time offer. Secure this premium domain before it's gone.</span>
+</li>
+</ul>
+</div>
+</section>
+<section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+<div class="max-w-2xl mx-auto">
+<h2 class="text-3xl font-extrabold text-center text-white mb-12">
+                Contact Us
+              </h2>
+<form class="space-y-6">
 <div>
-<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="name">Name</label>
-<input class="form-input" id="name" name="name" placeholder="Your Name" required="" type="text"/>
+<label class="block text-sm font-medium text-gray-200" for="name">Name</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-lg border-white/30 bg-white/10 text-white placeholder-gray-400 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] py-3 px-4 shadow-sm" id="name" name="name" placeholder="Your Name" required="" type="text"/>
+</div>
 </div>
 <div>
-<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="email">Email</label>
-<input class="form-input" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+<label class="block text-sm font-medium text-gray-200" for="email">Email</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-lg border-white/30 bg-white/10 text-white placeholder-gray-400 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] py-3 px-4 shadow-sm" id="email" name="email" placeholder="Your Email" required="" type="email"/>
+</div>
 </div>
 <div>
-<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="offer">Offer</label>
-<div class="bg-slate-700/50 border border-slate-600 rounded-md py-2 px-3 flex items-center justify-between">
-<p class="text-slate-400">Price starts from</p>
-<p class="text-white font-semibold">$1600</p>
+<label class="block text-sm font-medium text-gray-200" for="message">Message</label>
+<div class="mt-1">
+<textarea class="form-textarea block w-full rounded-lg border-white/30 bg-white/10 text-white placeholder-gray-400 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] py-3 px-4 shadow-sm" id="message" name="message" placeholder="Your Message" required="" rows="4"></textarea>
 </div>
 </div>
-<input name="_subject" type="hidden" value="New Purchase Inquiry for HiboxAI.com"/>
-<button class="mt-6 w-full bg-[var(--primary-color)] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:ring-opacity-50 transition duration-200 ease-in-out flex items-center justify-center gap-2" type="submit">
-    Send
-    <span class="material-symbols-outlined">send</span>
-</button>
+<div class="text-center">
+<button class="btn-primary rounded-lg px-12 py-3 text-lg font-bold transition-transform transform hover:scale-105" type="submit">
+                    Send Inquiry
+                  </button>
+</div>
 </form>
-<p class="mt-4 text-xs text-center text-slate-400">Powered by <a class="underline hover:text-white" href="https://formspree.io" target="_blank">Formspree</a>. Your inquiry will be sent to the owner's email.</p>
-</div>
 </div>
 </section>
 </div>
-<footer class="text-center py-6 px-4 mt-16">
-<p class="text-sm text-[var(--text-secondary)]">© 2024 HiboxAI.com. All rights reserved.</p>
-</footer>
-</main>
-<div class="chatbot-container group">
-<div class="chatbot-message">
-<p class="text-sm font-semibold mb-2">Hello from HiboxAI!</p>
-<p class="text-xs">This domain is a powerful asset for any AI venture. Ready to own the future? Make an offer using the form above!</p>
-</div>
-<div class="chatbot-icon">
-<span class="material-symbols-outlined text-4xl text-white" style="font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 48">
-            smart_toy
-        </span>
 </div>
 </div>
-
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 60,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+        },
+        "opacity": {
+          "value": 0.4,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 0.8,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 2.5,
+          "random": true,
+          "anim": {
+            "enable": false,
+          }
+        },
+        "line_linked": {
+          "enable": false
+        },
+        "move": {
+          "enable": true,
+          "speed": 0.5,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": false,
+          },
+          "onclick": {
+            "enable": false,
+          },
+          "resize": true
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body></html>
