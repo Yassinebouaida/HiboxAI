@@ -149,6 +149,16 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
   </head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary)]">
 <div class="background-animation"></div>
@@ -201,27 +211,29 @@
 </div>
 <div class="order-1 lg:order-2">
 <div class="p-8 bg-slate-800/50 rounded-xl shadow-lg border border-slate-700 backdrop-blur-sm">
-<h2 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight text-center mb-6">Make an Offer</h2>
+<h2 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight text-center mb-6">Purchase Inquiry</h2>
 <form action="#" class="space-y-4" method="POST">
 <div>
-<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="name">Your Name</label>
-<input class="form-input" id="name" name="name" placeholder="e.g. Jane Doe" required="" type="text"/>
+<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="name">Your name</label>
+<input class="form-input" id="name" name="name" placeholder="John Doe" required="" type="text"/>
 </div>
 <div>
-<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="email">Your Email</label>
-<input class="form-input" id="email" name="email" placeholder="e.g. jane@example.com" required="" type="email"/>
+<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="email">Your email</label>
+<input class="form-input" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
 </div>
 <div>
-<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="offer">Your Offer (USD)</label>
+<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="offer">Your offer (starts from $1600)</label>
 <div class="relative">
-<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-<span class="text-slate-400 sm:text-sm">$</span>
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">$</span>
+<input class="form-input pl-7" id="offer" min="1600" name="offer" placeholder="1600" required="" type="number"/>
 </div>
-<input class="form-input pl-7" id="offer" name="offer" placeholder="1600" required="" type="number"/>
 </div>
+<div>
+<label class="block text-sm font-medium text-[var(--text-secondary)] mb-1" for="message">Your message (optional)</label>
+<textarea class="form-input" id="message" name="message" placeholder="Tell us more about your project..." rows="3"></textarea>
 </div>
 <button class="mt-4 w-full bg-[var(--primary-color)] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:ring-opacity-50 transition duration-200 ease-in-out" type="submit">
-                    Submit Inquiry
+                    Send Inquiry
                   </button>
 </form>
 <p class="mt-4 text-xs text-center text-[var(--text-secondary)]">Your inquiry will be sent directly to the domain owner.</p>
